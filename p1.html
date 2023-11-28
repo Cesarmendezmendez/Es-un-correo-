@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verificación de Correo Electrónico</title>
+    <script>
+        function validarCorreo() {
+            var entradaUsuario = document.getElementById("correo").value;
+            var resultado = document.getElementById("resultado");
+
+            if (entradaUsuario.includes('@') && (entradaUsuario.endsWith('.com') || entradaUsuario.endsWith('.com.mx') || entradaUsuario.endsWith('.mx'))) {
+                resultado.innerHTML = "La cadena es un correo electrónico válido.";
+            } else {
+                resultado.innerHTML = "La cadena no es un correo electrónico válido.";
+            }
+        }
+    </script>
+</head>
+<body>
+
+    <h1>Verificación de Correo Electrónico</h1>
+    
+    <label for="correo">Ingrese una cadena de texto:</label>
+    <input type="text" id="correo" placeholder="Ejemplo: usuario@dominio.com">
+
+    <button onclick="validarCorreo()">Validar</button>
+
+    <p id="resultado"></p>
+
+</body>
+</html>
